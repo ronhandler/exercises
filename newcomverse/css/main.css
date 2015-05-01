@@ -1,0 +1,27 @@
+/* line 19, ../scss/main.scss */
+body {
+  font: 100% 'Open Sans';
+  font-style: normal;
+  font-variant: normal;
+  margin: 0;
+  padding: 0; }
+
+/* line 27, ../scss/main.scss */
+body > * > * {
+  width: 55%;
+  margin: 0 auto; }
+@media only screen and (max-width: 320px) {
+  /* line 27, ../scss/main.scss */
+  body > * > * {
+    width: 50%; } }
+
+/* line 35, ../scss/main.scss */
+.pane {
+  background-color: skyblue;
+  -moz-box-shadow: rgba(0, 0, 255, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
+  -webkit-box-shadow: rgba(0, 0, 255, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
+  box-shadow: rgba(0, 0, 255, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset; }
+
+/* line 40, ../scss/main.scss */
+.outline-only {
+  display: none; }
