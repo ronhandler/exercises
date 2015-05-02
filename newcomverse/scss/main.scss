@@ -1,19 +1,14 @@
 @import "compass/css3";
+@import "compass/typography/links/hover-link";
+@import "compass/typography/links/link-colors";
 
+@import "base";
 
-// This bit sets media query mixins.
-@mixin respond-to($media) {
-	$break-small: 320px;
-	$break-large: 1024px;
-	@if $media == handhelds {
-		@media only screen and (max-width: $break-small) { @content; }
-	}
-	@else if $media == mediumscreens {
-		@media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
-	}
-	@else if $media == widescreens {
-		@media only screen and (min-width: $break-large) { @content; }
-	}
+$center-margin-small:  65%;
+$center-margin-medium: 65%;
+$center-margin-large:  65%;
+html, body {
+	text-align: center;
 }
 
 body {
@@ -24,17 +19,81 @@ body {
 	padding: 0;
 }
 
-body>*>* {
-	width: 55%;
+.center-wrapper {
+	width: $center-margin-large;
 	margin: 0 auto;
-	@include respond-to(handhelds) {
-		width: 50%;
+	@include respond-to(mediumscreens) {
+		width: $center-margin-medium;
 	}
 }
 
+a {
+	@include hover-link;
+	@include link-colors(#333, darkblue);
+}
+
+ul, li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+
 .pane {
-	background-color: skyblue;
-	@include box-shadow(rgba(blue, 0.4) 0 0 25px, rgba(green, 0.2) 0 0 3px 1px inset);
+	background-color: rgba(skyblue, 0.5);
+	$shadow-size: 5px;
+	@include box-shadow(rgba(black, 0.35) 0px $shadow-size $shadow-size);
+}
+
+$carousel-button-size: 20px;
+.carousel-button {
+	color: transparent;
+	display: inline-block;
+	width: $carousel-button-size;
+	height: $carousel-button-size;
+	background-color: rgba(white, 0.8);
+	&:hover {
+		background-color: rgba(navy, 0.8);
+	}
+}
+
+.article-cards article {
+	display: inline-block;
+	width: 15em;
+}
+
+$navigation-pane-size: 100px;
+.navigation.pane {
+	height: $navigation-pane-size;
+	width: 100%;
+	position: fixed;
+	background-color: white;
+}
+
+.highlights.pane {
+	padding-top: $navigation-pane-size + 20px ;
+	// Temporarily disabling the sliding carousel.
+	& li:not(first-child) {
+		display: none;
+	}
+}
+
+.menu-bar li,
+.links li
+{
+	display: inline-block;
+	@include respond-to(handhelds) {
+		display: block;
+	}
+}
+
+
+.dropdown {
+	display: none;
 }
 
 .outline-only {

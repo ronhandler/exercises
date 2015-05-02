@@ -1,4 +1,8 @@
-/* line 19, ../scss/main.scss */
+/* line 10, ../scss/main.scss */
+html, body {
+  text-align: center; }
+
+/* line 14, ../scss/main.scss */
 body {
   font: 100% 'Open Sans';
   font-style: normal;
@@ -6,22 +10,86 @@ body {
   margin: 0;
   padding: 0; }
 
-/* line 27, ../scss/main.scss */
-body > * > * {
-  width: 55%;
+/* line 22, ../scss/main.scss */
+.center-wrapper {
+  width: 65%;
   margin: 0 auto; }
-@media only screen and (max-width: 320px) {
-  /* line 27, ../scss/main.scss */
-  body > * > * {
-    width: 50%; } }
+@media only screen and (min-width: 321px) and (max-width: 1023px) {
+  /* line 22, ../scss/main.scss */
+  .center-wrapper {
+    width: 65%; } }
+
+/* line 30, ../scss/main.scss */
+a {
+  text-decoration: none;
+  color: #333; }
+/* line 4, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_hover-link.scss */
+a:hover, a:focus {
+  text-decoration: underline; }
+/* line 24, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: darkblue; }
 
 /* line 35, ../scss/main.scss */
-.pane {
-  background-color: skyblue;
-  -moz-box-shadow: rgba(0, 0, 255, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
-  -webkit-box-shadow: rgba(0, 0, 255, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
-  box-shadow: rgba(0, 0, 255, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset; }
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
 
-/* line 40, ../scss/main.scss */
+/* line 41, ../scss/main.scss */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+/* line 46, ../scss/main.scss */
+.pane {
+  background-color: rgba(135, 206, 235, 0.5);
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px; }
+
+/* line 53, ../scss/main.scss */
+.carousel-button {
+  color: transparent;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.8); }
+/* line 59, ../scss/main.scss */
+.carousel-button:hover {
+  background-color: rgba(0, 0, 128, 0.8); }
+
+/* line 64, ../scss/main.scss */
+.article-cards article {
+  display: inline-block;
+  width: 15em; }
+
+/* line 70, ../scss/main.scss */
+.navigation.pane {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  background-color: white; }
+
+/* line 77, ../scss/main.scss */
+.highlights.pane {
+  padding-top: 120px; }
+/* line 80, ../scss/main.scss */
+.highlights.pane li:not(first-child) {
+  display: none; }
+
+/* line 85, ../scss/main.scss */
+.menu-bar li, .links li {
+  display: inline-block; }
+@media only screen and (max-width: 320px) {
+  /* line 85, ../scss/main.scss */
+  .menu-bar li, .links li {
+    display: block; } }
+
+/* line 95, ../scss/main.scss */
+.dropdown {
+  display: none; }
+
+/* line 99, ../scss/main.scss */
 .outline-only {
   display: none; }
