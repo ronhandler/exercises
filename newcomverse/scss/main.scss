@@ -1,20 +1,25 @@
 @import "compass/css3";
 @import "compass/typography/links/hover-link";
 @import "compass/typography/links/link-colors";
+@import "compass/utilities/general/clearfix";
 
 @import "base";
 
-$center-margin-small:  65%;
-$center-margin-medium: 65%;
-$center-margin-large:  65%;
-html, body {
-	text-align: center;
+$center-margin-small:  100%;
+$center-margin-medium: 100%;
+$center-margin-large:  85%;
+
+$navigation-pane-size: 60px;
+
+html {
+	background-color: #303030;
 }
 
 body {
 	font: 100% 'Open Sans';
 	font-style: normal;
 	font-variant: normal;
+	text-align: center;
 	margin: 0;
 	padding: 0;
 }
@@ -22,14 +27,14 @@ body {
 .center-wrapper {
 	width: $center-margin-large;
 	margin: 0 auto;
-	@include respond-to(mediumscreens) {
+	@include tablets {
 		width: $center-margin-medium;
 	}
 }
 
 a {
 	@include hover-link;
-	@include link-colors(#333, darkblue);
+	@include link-colors(#444, darkblue);
 }
 
 ul, li {
@@ -39,12 +44,30 @@ ul, li {
 }
 
 h1, h2, h3, h4, h5, h6, p {
+	font-size: 1rem;
+	font-weight: lighter;
+	font-style: normal;
 	margin: 0;
 	padding: 0;
 }
 
+.menubar-button {
+	//top: 0;
+	@include box-shadow(rgba(black, 0.35) 0 0 5px);
+	@include background-image(linear-gradient(#eeeeee, #bbbbbb));
+	border-radius: 4px;
+	padding: 10px;
+    //background-size: 100% 100%;
+	@include widescreens {
+		display: none;
+	}
+	@include handhelds {
+		//max-width: $navigation-pane-size;
+		//max-height: $navigation-pane-size;
+	}
+}
+
 .pane {
-	background-color: rgba(skyblue, 0.5);
 	$shadow-size: 5px;
 	@include box-shadow(rgba(black, 0.35) 0px $shadow-size $shadow-size);
 }
@@ -53,6 +76,7 @@ $carousel-button-size: 20px;
 .carousel-button {
 	color: transparent;
 	display: inline-block;
+	border-radius: 5px;
 	width: $carousel-button-size;
 	height: $carousel-button-size;
 	background-color: rgba(white, 0.8);
@@ -66,37 +90,245 @@ $carousel-button-size: 20px;
 	width: 15em;
 }
 
-$navigation-pane-size: 100px;
 .navigation.pane {
+	padding-bottom: 10px;
 	height: $navigation-pane-size;
 	width: 100%;
-	position: fixed;
+	vertical-align: bottom;
+	min-height: 60px;
+	@include widescreens {
+		position: fixed;
+	}
+	@include handhelds {
+		min-height: 30px;
+	}
+
+	.links-and-search {
+		display: inline-block;
+	}
+	.links, .search-bar {
+		text-align: right;
+		display: block;
+		margin-left: 2rem;
+	}
+	.logo,.menu-bar {
+		display: inline-block;
+		@include handhelds {
+			//float: top;
+		}
+	}
+	.menu-bar .dropdown li {
+		display: block;
+		text-align: left;
+	}
+
 	background-color: white;
 }
 
+/* Adding separators between menu items. */
+.links ul li:last-child a:after,
+.navigation.pane ul li:last-child h4:after {
+	content: "";
+}
+.links ul li a:after,
+.navigation.pane ul li h4:after {
+	content: " | ";
+	color: #DDDDDD;
+}
+
 .highlights.pane {
-	padding-top: $navigation-pane-size + 20px ;
-	// Temporarily disabling the sliding carousel.
-	& li:not(first-child) {
+	$img: 'slide-bg-complexity.jpg';
+	background: image-url($img) 0 0 no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	@include widescreens {
+		padding-top: $navigation-pane-size * 1.5;
+	}
+	// Temporarily disabling the sliding carousel. Only first item.
+	&>div>ul>li:not(:first-child) section {
+		display: none;
+	}
+}
+.solutions.pane {
+	@include background-image(radial-gradient(50% 50% 0, rgba(147,206,222,1) 10px, #1e90ff 60px));
+}
+.news.pane {
+	$img: 'news-and-events-bg.jpg';
+	background: image-url($img) 0 0 no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+.stories.pane {
+	background-color: #eee;
+}
+.menu-bar,
+.links {
+	li {
+		background-color: white;
+		display: inline-block;
+	}
+	& ul {
+		@include handhelds {
+			display: none;
+		}
+		@include tablets {
+			display: none;
+		}
+	}
+}
+
+.menu-bar>ul {
+	@include handhelds {
+		//float: left;
+		position: absolute;
+		z-index: 100;
+		top: $navigation-pane-size*1.1;
+		right: 0;
+		left: 0;
+		& li {
+			display: block;
+		}
+	}
+	@include tablets {
+		//float: left;
+		position: absolute;
+		z-index: 100;
+		top: $navigation-pane-size*1.1;
+		right: 0;
+		left: 0;
+		& li {
+			display: block;
+		}
+	}
+	& ul:hover {
+		//display: none;
+	}
+}
+
+.search-bar form {
+	@include handhelds {
+		display: none;
+	}
+	@include tablets {
 		display: none;
 	}
 }
 
-.menu-bar li,
-.links li
-{
-	display: inline-block;
-	@include respond-to(handhelds) {
+.hamburger.checkbox:checked {
+	& ~ .menu-bar * {
+		@include handhelds {
+			display: block
+		}
+		@include tablets {
+			display: block;
+		}
+	}
+}
+.search.checkbox:checked ~ .links-and-search form {
+	@include handhelds {
+		display: block;
+	}
+	@include tablets {
 		display: block;
 	}
 }
 
+.search-bar {
+	input {
+		width: 10em;
+	}
+}
 
-.dropdown {
+/* The search menu button. */
+.search.menubar-button {
+	float: right;
+	content: image-url("searchBtnMobile.png") 0 0 no-repeat;
+	margin: 10px 10px 0 0;
+	@include widescreens {
+		display: none;
+	}
+}
+
+.checkbox {
 	display: none;
 }
 
+.hamburger.menubar-button {
+	float: left;
+	content: image-url("hamburger-icon.png") 0 0 no-repeat;
+	margin: 10px 0 0 10px;
+	@include widescreens {
+		display: none;
+	}
+}
+
+.menu-bar>* {
+	background-color: white;
+	//left: 0;
+	@include handhelds {
+		text-align: left;
+		position: relative;
+		float: left;
+	}
+	@include tablets {
+		text-align: left;
+		position: relative;
+		float: left;
+	}
+}
+
+/* Testing. Consider deleting this... */
+.logo {
+	$img : 'comverse-logo.png';
+	background: image-url($img) 0 0 no-repeat;
+	width: image-width($img);
+	height: image-height($img);
+
+	@include widescreens {
+		//margin-left: 10%;
+	}
+	@include tablets {
+		//display: block;
+		//width: 120px;
+	}
+	@include handhelds {
+		//width: 70px;
+	}
+}
+
+// Dropdown menu settings.
+.dropdown {
+	$dropdown-margin: 2em;
+	transition: all 0.25s ease-in;
+	z-index: 50;
+	position: absolute;
+	opacity: 0;
+	visibility:hidden;
+	min-width: 100px;
+	padding: $dropdown-margin;
+    background-color: white;
+}
+
+.menu-bar section:hover .dropdown {
+	transition: all 0.25s ease-in-out;
+	opacity: 1;
+	visibility:visible;
+}
+
+.menu-bar section:hover {
+	transition: all 0.25s ease-in-out;
+	$shadow-size: 10px;
+	@include box-shadow(rgba(black, 0.35) 0px -0.5*$shadow-size 2*$shadow-size);
+}
+.dropdown {
+	transition: all 0.25s ease-in-out;
+	$shadow-size: 10px;
+	@include box-shadow(rgba(black, 0.35) 0px $shadow-size $shadow-size);
+}
+
 .outline-only {
-	display: none;
+	display: none !important;
 }
 

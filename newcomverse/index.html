@@ -17,17 +17,18 @@
 		<nav class="navigation pane">
 			<div class="center-wrapper">
 			<h2 class="outline-only">Navigation bar</h2>
-			<section class="links">
-				<h3 class="outline-only">Links</h3>
-				<ul>
-					<li><a href="#">Contact us</a></li>
-					<li><a href="#">Investor relations</a></li>
-					<li><a href="#">Customer login</a></li>
-				</ul>
-			</section>
-			<section>
+			<input id="cb1" class="hamburger checkbox" type="checkbox">
+			<label for="cb1" class="hamburger menubar-button">
+				<span></span>
+			</label>
+			<!--<div class="search menubar-button">&nbsp;</div>-->
+			<input id="cb2" class="search checkbox" type="checkbox">
+			<label for="cb2" class="search menubar-button">
+				<span></span>
+			</label>
+			<section class="logo">
 				<h3 class="outline-only">Comverse logo</h3>
-				<imghref="" alt=""></img>
+				<!--<img src="img/comverse-logo.png" alt="Comverse">-->
 			</section>
 			<section class="menu-bar">
 				<h3 class="outline-only">Menu bar</h3>
@@ -176,12 +177,21 @@
 					</li>
 				</ul>
 			</section>
-			<section>
-				<h3 class="outline-only">Search</h3>
-				<form>
-					Search
-				</form>
-			</section>
+			<div class="links-and-search">
+				<section class="links">
+					<h3 class="outline-only">Links</h3>
+					<ul>
+						<li><a href="#">EN &#x25be;</a></li>
+						<li><a href="#">Customer login</a></li>
+					</ul>
+				</section>
+				<section class="search-bar">
+					<h3 class="outline-only">Search</h3>
+					<form class="search">
+						<input type="search">
+					</form>
+				</section>
+			</div>
 			</div>
 		</nav>
 

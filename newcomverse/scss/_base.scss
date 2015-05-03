@@ -14,3 +14,7 @@ $break-large: 1024px;
 	}
 }
 
+@mixin handhelds { @include respond-to(handhelds) { @content; } }
+@mixin tablets { @include respond-to(mediumscreens) { @content; } }
+@mixin widescreens { @include respond-to(widescreens) { @content; } }
+
