@@ -14,7 +14,11 @@ $navigation-pane-size: 60px;
 $grid-width: 17rem;
 $radius: 0.5rem;
 
-$button-color: rgba(#0066ff, 0.6);
+$button-color: rgba(#0099ff, 0.6);
+.button {
+	@include transition(all 0.2s ease-in-out);
+	@include background-image(linear-gradient(rgba(transparent,0), rgba(black, 0.3)));
+}
 
 html {
 	background-color: #303030;
@@ -72,13 +76,24 @@ h1, h2, h3, h4, h5, h6, p {
 	}
 }
 
-.pane {
-	$shadow-size: 5px;
-	@include box-shadow(rgba(black, 0.35) 0px $shadow-size $shadow-size);
+.pane:not(.footer) {
+	$shadow-size: 10px;
+	@include box-shadow(rgba(black, 0.35) 0 0 $shadow-size);
+}
+.pane:first-of-type {
+	$padding: 1rem;
+	padding-bottom: $padding;
+}
+.pane:not(:first-of-type) {
+//.pane {
+	$padding: 1rem;
+	padding-top: $padding;;
+	padding-bottom: $padding;
 }
 
 $carousel-button-size: 20px;
 .carousel-button {
+	@include transition(all 0.35s ease-in-out);
 	color: transparent;
 	display: inline-block;
 	width: $carousel-button-size;
@@ -184,14 +199,14 @@ $carousel-button-size: 20px;
 }
 .article-cards article {
 	@include tablets {
-		@include debug;
+		//@include debug;
 		display: block;
 	}
 }
 .solutions.pane {
 	@include background-image(radial-gradient(50% 50% 0, rgba(147,206,222,1) 10px, #1e90ff 60px));
 	li {
-		@include debug;
+		//@include debug;
 		display: inline-block;
 
 		width: $grid-width/2 - (3.8*$radius);
@@ -203,7 +218,31 @@ $carousel-button-size: 20px;
 			display: block;
 		}
 	}
+	a {
+		@include link-colors(white, darken($button-color, 30%));
+	}
 }
+.solution-img {
+	@include transition(all 0.35s ease-in-out);
+	background-position: center top;
+	$img: 'solution_icon_biz-analitics.png';
+	width: image-width($img);
+	height: image-height($img);
+	padding-top: image-height($img);
+}
+.solution-img.one { background: image-url('solution_icon_biz-analitics.png') 0 0 no-repeat; }
+.solution-img.one:hover { background: image-url('solution_icon_biz-analitics_hover.png') 0 0 no-repeat; }
+.solution-img.two { background: image-url('solution_icon_biz-transform.png') 0 0 no-repeat; }
+.solution-img.two:hover { background: image-url('solution_icon_biz-transform_hover.png') 0 0 no-repeat; }
+.solution-img.three { background: image-url('solution_icon_diti-cx.png') 0 0 no-repeat; }
+.solution-img.three:hover { background: image-url('solution_icon_diti-cx_hover.png') 0 0 no-repeat; }
+.solution-img.four { background: image-url('solution_icon_optimize-efficnt.png') 0 0 no-repeat; }
+.solution-img.four:hover { background: image-url('solution_icon_optimize-efficnt_hover.png') 0 0 no-repeat; }
+.solution-img.five { background: image-url('solution_icon_personal.png') 0 0 no-repeat; }
+.solution-img.five:hover { background: image-url('solution_icon_personal_hover.png') 0 0 no-repeat; }
+.solution-img.six { background: image-url('solution_icon_smart-money.png') 0 0 no-repeat; }
+.solution-img.six:hover { background: image-url('solution_icon_smart-money_hover.png') 0 0 no-repeat; }
+
 .news.pane {
 	$img: 'news-and-events-bg.jpg';
 	background: image-url($img) 0 0 no-repeat;
@@ -220,21 +259,62 @@ $carousel-button-size: 20px;
 	article {
 		padding: 2*$radius;
 		max-width: $grid-width - (3.8*$radius);
+		@include transition(all 0.35s ease-in-out);
 		background-color: rgba(white, 0.25);
+		&:hover {
+			background-color: rgba(white, 0.40);
+		}
+		&>p {
+			padding-left: 0.5rem;
+			max-width: 70%;
+		}
 	}
 	p {
 		color: black;
 	}
-}
-.stories.pane {
-	background-color: #eee;
-	li {
-		@include debug;
-		display: inline-block;
-		max-width: $grid-width;
-		min-height: 18rem;
-		vertical-align: bottom;
+	a {
+		@include link-colors(white, #a0a0a0);
+		padding-left: 2rem;
+		margin-left: 1rem;
+		background-repeat: no-repeat;
+		background-image: image-url('eventListIconEvents.png');
+		@include transition(all 0.35s ease-in-out);
+		&:hover {
+			background-image: image-url('eventListIconEvents_hover.png');
+		}
 	}
+}
+
+.news.pane li:first-child a {
+	background-image: image-url('eventListIconNews.png');
+	&:hover {
+		background-image: image-url('eventListIconNews_hover.png');
+	}
+}
+
+.news.pane li {
+	text-align: left;
+}
+.news.pane header {
+	background-color: rgba($button-color, 1);
+	border-radius: 2px;
+	$shadow-size: 10px;
+	@include box-shadow(rgba(black, 0.35) 0 0 2*$shadow-size);
+	max-width: 25%;
+	p {
+		color: white;
+	}
+	.day {
+		font-size: 3rem;
+		text-align: center;
+	}
+	.month {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+}
+.news.pane article>* {
+	display: inline-block;
 }
 .footer.pane {
 	& > div > ul > li {
@@ -248,6 +328,8 @@ $carousel-button-size: 20px;
 		@include link-colors(white, #a0a0a0);
 	}
 }
+
+
 .menu-bar,
 .links {
 	li {
@@ -292,6 +374,13 @@ $carousel-button-size: 20px;
 	}
 }
 
+.search-bar input {
+	background: image-url('searchBtn.png') 0 0 no-repeat;
+	background-color: rgba(white, 1);
+	background-repeat: no-repeat;
+	background-position: right;
+	border-radius: $radius;
+}
 .search-bar form {
 	@include handhelds {
 		display: none;
@@ -459,5 +548,112 @@ $carousel-button-size: 20px;
 	background-color: $button-color;
 	&:hover {
 		background-color: darken($button-color, 15%);
+	}
+}
+$stories-width: $grid-width*1.15;
+.stories.pane {
+	background-color: #eee;
+	h2 {
+		color: rgba(black, 0.8);
+	}
+	li {
+		//@include debug;
+		color: rgba(black, 0.8);
+		display: inline-block;
+		max-width: $stories-width;
+		//min-height: 18rem;
+		vertical-align: bottom;
+		text-align: left;
+	}
+	img {
+		width: 5rem;
+	}
+}
+.front {
+	.face, h4, footer {
+		font-size: 0.8rem;;
+		display: inline-block;
+		padding: 0.5rem;
+		vertical-align: top;
+	}
+}
+.stories.pane h4 {
+	text-align: justify;
+	&:before, &:after {
+		content: " ";
+		width: 1.2em;
+		height: 1.2em;
+		display: inline-block;
+		background: image-url('quote-grey.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-right: 1em;
+	}
+}
+.stories.pane .firstname {
+	color: $button-color;
+	text-transform: uppercase;
+}
+.front .face {
+	width: 25%;
+}
+.front h4 {
+	width: 60%;
+}
+
+.flip-wrapper {
+	width: $stories-width;
+	height: 15rem;
+    margin: auto;
+    position: relative;
+	margin-bottom: 0.5rem;
+	&:hover .front {
+		z-index: 1;
+		@include transform(rotateX(180deg));
+	}
+	&:hover .back {
+		z-index: 2;
+		@include transform(rotateX(0deg));
+	}
+}
+.last .flip-wrapper {
+	width: 100%;
+}
+
+.front,.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	@include transition(all 0.35s ease-in-out);
+    @include backface-visibility(hidden);
+}
+.front {
+    z-index: 2;
+	background-color: rgba(white, 1);
+}
+.back {
+    z-index: 1;
+	background-color: rgba(white, 1);
+	@include transform(rotateX(-180deg));
+}
+.company {
+	margin-bottom: 0.5rem;
+	display: inline-block;
+	background-color: rgba(white, 0.8);
+	width: ($stories-width - 0.8rem)/3;
+	height: auto;
+	//width: auto;
+	//height: 100%;
+	text-align: center;
+	//@include transition(all 0.5s ease-in-out);
+	&:hover {
+		background: image-url('logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg');
+		background-position: center;
+		img {
+			visibility: hidden;
+		}
 	}
 }
