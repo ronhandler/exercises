@@ -85,7 +85,6 @@ h1, h2, h3, h4, h5, h6, p {
 	padding-bottom: $padding;
 }
 .pane:not(:first-of-type) {
-//.pane {
 	$padding: 1rem;
 	padding-top: $padding;;
 	padding-bottom: $padding;
@@ -103,6 +102,12 @@ $carousel-button-size: 20px;
 	&:hover {
 		background-color: $button-color;
 	}
+}
+.carousel-menu  {
+	width: 3*$grid-width - ($radius);
+	display: inline-block;
+	text-align: left;
+	margin: 1rem 0 1rem 0;
 }
 
 .article-cards article {
@@ -218,7 +223,7 @@ $carousel-button-size: 20px;
 			display: block;
 		}
 	}
-	a {
+	ul a {
 		@include link-colors(white, darken($button-color, 30%));
 	}
 }
@@ -304,14 +309,14 @@ $carousel-button-size: 20px;
 	p {
 		color: white;
 	}
-	.day {
-		font-size: 3rem;
-		text-align: center;
-	}
-	.month {
-		font-size: 1.5rem;
-		text-align: center;
-	}
+}
+.day {
+	font-size: 3rem;
+	text-align: center;
+}
+.month {
+	font-size: 1.5rem;
+	text-align: center;
 }
 .news.pane article>* {
 	display: inline-block;
@@ -324,10 +329,69 @@ $carousel-button-size: 20px;
 		text-align: left;
 		vertical-align: top;
 	}
+	& > div >* {
+		display: inline-block;
+		vertical-align: bottom;
+	}
 	a {
 		@include link-colors(white, #a0a0a0);
 	}
 }
+.social {
+	//width: $grid-width/2.5;
+	height: 16rem;
+	padding: 1rem;
+	display: inline-block;
+	background-color: rgba(white, 0.1);
+	min-width: $grid-width;
+	display: block;
+	article>*,
+	.subscribe-box>*,
+	.subscribe-box input  {
+		text-align: left;
+		width: $grid-width/2.5;
+		display: inline-block;
+	}
+	h3 {
+		color: lighten($button-color, 20%);
+	}
+	ul {
+		margin-top: 3rem;
+		li {
+			display: inline-block;
+		}
+	}
+}
+.subscribe-box * {
+	vertical-align: top;
+}
+.social .submit-button {
+	background-color: lighten($button-color, 20%);
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 21px;
+	width: auto;
+}
+
+.social-img {
+	@include transition(all 0.35s ease-in-out);
+	background-position: center top;
+	$img: 'socialMenuIcon-linkdin.png';
+	width: image-width($img);
+	height: image-height($img);
+	padding-top: image-height($img);
+}
+.social-img.one { background: image-url('socialMenuIcon-linkdin.png') 0 0 no-repeat; }
+.social-img.one:hover { background: image-url('socialMenuIcon-linkdin_hover.png') 0 0 no-repeat; }
+.social-img.two { background: image-url('socialMenuIcon-twitter.png') 0 0 no-repeat; }
+.social-img.two:hover { background: image-url('socialMenuIcon-twitter_hover.png') 0 0 no-repeat; }
+.social-img.three { background: image-url('socialMenuIcon-youtube.png') 0 0 no-repeat; }
+.social-img.three:hover { background: image-url('socialMenuIcon-youtube_hover.png') 0 0 no-repeat; }
+
+///socialMenuIcon-linkdin_hover.png
+///socialMenuIcon-twitter_hover.png
+///socialMenuIcon-youtube_hover.png
 
 
 .menu-bar,
