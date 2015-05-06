@@ -11,8 +11,14 @@ $center-margin-large:  85%;
 
 $navigation-pane-size: 60px;
 
+$grid-width: 17rem;
+$radius: 0.5rem;
+
+$button-color: rgba(#0066ff, 0.6);
+
 html {
 	background-color: #303030;
+	color: white; /* Text coloring everything to white. */
 }
 
 body {
@@ -54,8 +60,7 @@ h1, h2, h3, h4, h5, h6, p {
 .menubar-button {
 	//top: 0;
 	@include box-shadow(rgba(black, 0.35) 0 0 5px);
-	@include background-image(linear-gradient(#eeeeee, #bbbbbb));
-	border-radius: 4px;
+	border-radius: $radius;
 	padding: 10px;
     //background-size: 100% 100%;
 	@include widescreens {
@@ -76,19 +81,31 @@ $carousel-button-size: 20px;
 .carousel-button {
 	color: transparent;
 	display: inline-block;
-	border-radius: 5px;
 	width: $carousel-button-size;
 	height: $carousel-button-size;
 	background-color: rgba(white, 0.8);
+	border-radius: $radius/2;
 	&:hover {
-		background-color: rgba(navy, 0.8);
+		background-color: $button-color;
 	}
 }
 
 .article-cards article {
+	//@include debug;
 	display: inline-block;
-	width: 15em;
+	//max-width: $grid-width;
+	max-width: $grid-width - (3*$radius);
+	min-height: 6rem;
+	border-radius: $radius;
+	padding: 2*$radius;
+	text-align: left;
+	vertical-align: bottom;
+	$transparency: 0.7;
+	&.one { background: rgba(deeppink, $transparency); }
+	&.two { background: rgba(limegreen, $transparency); }
+	&.three { background: rgba(orangered, $transparency); }
 }
+
 
 .navigation.pane {
 	padding-bottom: 10px;
@@ -146,12 +163,46 @@ $carousel-button-size: 20px;
 		padding-top: $navigation-pane-size * 1.5;
 	}
 	// Temporarily disabling the sliding carousel. Only first item.
-	&>div>ul>li:not(:first-child) section {
+	&>div>ul>li:not(:first-child) * {
 		display: none;
+	}
+	&>div>ul>li section {
+		//@include debug;
+		display: inline-block;
+		width: $grid-width*3;
+		max-width: 100%;
+		text-align: left;
+		& p {
+			max-width: $grid-width*1.5;
+		}
+		@include tablets {
+			border-radius: $radius;
+			background-color: $button-color;
+			padding: 2*$radius;
+		}
+	}
+}
+.article-cards article {
+	@include tablets {
+		@include debug;
+		display: block;
 	}
 }
 .solutions.pane {
 	@include background-image(radial-gradient(50% 50% 0, rgba(147,206,222,1) 10px, #1e90ff 60px));
+	li {
+		@include debug;
+		display: inline-block;
+
+		width: $grid-width/2 - (3.8*$radius);
+		min-height: 5rem;
+		border-radius: $radius;
+		padding: 2*$radius;
+		vertical-align: bottom;
+		@include tablets {
+			display: block;
+		}
+	}
 }
 .news.pane {
 	$img: 'news-and-events-bg.jpg';
@@ -159,9 +210,43 @@ $carousel-button-size: 20px;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
+	vertical-align: bottom;
+	li {
+		//@include debug;
+		display: inline-block;
+		min-height: 10rem;
+		border-radius: $radius/3;
+	}
+	article {
+		padding: 2*$radius;
+		max-width: $grid-width - (3.8*$radius);
+		background-color: rgba(white, 0.25);
+	}
+	p {
+		color: black;
+	}
 }
 .stories.pane {
 	background-color: #eee;
+	li {
+		@include debug;
+		display: inline-block;
+		max-width: $grid-width;
+		min-height: 18rem;
+		vertical-align: bottom;
+	}
+}
+.footer.pane {
+	& > div > ul > li {
+		display: inline-block;
+		//max-width: $grid-width;
+		max-width: $grid-width - (4*$radius);
+		text-align: left;
+		vertical-align: top;
+	}
+	a {
+		@include link-colors(white, #a0a0a0);
+	}
 }
 .menu-bar,
 .links {
@@ -229,22 +314,34 @@ $carousel-button-size: 20px;
 .search.checkbox:checked ~ .links-and-search form {
 	@include handhelds {
 		display: block;
+		position: absolute;
+		right: 1rem;
+		top: $navigation-pane-size*1.1;
 	}
 	@include tablets {
 		display: block;
+		position: absolute;
+		right: 1rem;
+		top: $navigation-pane-size*1.1;
 	}
 }
 
 .search-bar {
 	input {
-		width: 10em;
+		width: 10rem;
 	}
 }
 
 /* The search menu button. */
 .search.menubar-button {
 	float: right;
-	content: image-url("searchBtnMobile.png") 0 0 no-repeat;
+	$img: 'searchBtnMobile.png';
+	background: image-url($img) 0 0 no-repeat;
+	background-color: #eee;
+	background-position: center;
+	width: image-width($img);
+	height: image-height($img);
+
 	margin: 10px 10px 0 0;
 	@include widescreens {
 		display: none;
@@ -257,7 +354,13 @@ $carousel-button-size: 20px;
 
 .hamburger.menubar-button {
 	float: left;
-	content: image-url("hamburger-icon.png") 0 0 no-repeat;
+	$img: 'hamburger-icon.png';
+	background: image-url($img) 0 0 no-repeat;
+	background-color: #eee;
+	background-position: center;
+	width: image-width($img);
+	height: image-height($img);
+	
 	margin: 10px 0 0 10px;
 	@include widescreens {
 		display: none;
@@ -300,7 +403,7 @@ $carousel-button-size: 20px;
 
 // Dropdown menu settings.
 .dropdown {
-	$dropdown-margin: 2em;
+	$dropdown-margin: 2rem;
 	transition: all 0.25s ease-in;
 	z-index: 50;
 	position: absolute;
@@ -319,9 +422,15 @@ $carousel-button-size: 20px;
 
 .menu-bar section:hover {
 	transition: all 0.25s ease-in-out;
-	$shadow-size: 10px;
-	@include box-shadow(rgba(black, 0.35) 0px -0.5*$shadow-size 2*$shadow-size);
+	@include widescreens {
+		$shadow-size: 10px;
+		@include box-shadow(rgba(black, 0.35) 0px -0.5*$shadow-size 2*$shadow-size);
+	}
 }
+.menu-bar h4 {
+	color: #555;
+}
+
 .dropdown {
 	transition: all 0.25s ease-in-out;
 	$shadow-size: 10px;
@@ -332,3 +441,23 @@ $carousel-button-size: 20px;
 	display: none !important;
 }
 
+.pane .button {
+	padding: 8px;
+	display: inline-block;
+	border-radius: $radius;
+	a {
+		@include link-colors(white);
+		text-decoration: none;
+		//text-transform: uppercase;
+	}
+	a:after {
+		content:"\25B6"; /* This is a right triangle character. */
+		display: inline-block;
+		text-align: right;
+		width: 30px;
+	}
+	background-color: $button-color;
+	&:hover {
+		background-color: darken($button-color, 15%);
+	}
+}
