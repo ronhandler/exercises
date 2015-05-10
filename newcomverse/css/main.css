@@ -1,4 +1,3 @@
-/* line 18, ../scss/main.scss */
 .button {
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -11,13 +10,11 @@
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)); }
 
-/* line 23, ../scss/main.scss */
 html {
   background-color: #303030;
   color: white;
   /* Text coloring everything to white. */ }
 
-/* line 28, ../scss/main.scss */
 body {
   font: 100% 'Open Sans';
   font-style: normal;
@@ -26,33 +23,26 @@ body {
   margin: 0;
   padding: 0; }
 
-/* line 37, ../scss/main.scss */
 .center-wrapper {
   width: 85%;
   margin: 0 auto; }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 37, ../scss/main.scss */
   .center-wrapper {
     width: 100%; } }
 
-/* line 45, ../scss/main.scss */
 a {
   text-decoration: none;
   color: #444; }
-/* line 4, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_hover-link.scss */
 a:hover, a:focus {
   text-decoration: underline; }
-/* line 24, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a:hover {
   color: darkblue; }
 
-/* line 50, ../scss/main.scss */
 ul, li {
   list-style-type: none;
   margin: 0;
   padding: 0; }
 
-/* line 56, ../scss/main.scss */
 h1, h2, h3, h4, h5, h6, p {
   font-size: 1rem;
   font-weight: lighter;
@@ -60,7 +50,6 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0; }
 
-/* line 64, ../scss/main.scss */
 .menubar-button {
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0 0 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0 0 5px;
@@ -68,26 +57,21 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 0.5rem;
   padding: 10px; }
 @media only screen and (min-width: 1024px) {
-  /* line 64, ../scss/main.scss */
   .menubar-button {
     display: none; } }
 
-/* line 79, ../scss/main.scss */
 .pane:not(.footer) {
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0 0 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0 0 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 0 10px; }
 
-/* line 83, ../scss/main.scss */
 .pane:first-of-type {
   padding-bottom: 1rem; }
 
-/* line 87, ../scss/main.scss */
 .pane:not(:first-of-type) {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
-/* line 94, ../scss/main.scss */
 .carousel-button {
   -moz-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
@@ -99,18 +83,15 @@ h1, h2, h3, h4, h5, h6, p {
   height: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0.25rem; }
-/* line 102, ../scss/main.scss */
 .carousel-button:hover {
   background-color: rgba(0, 153, 255, 0.6); }
 
-/* line 106, ../scss/main.scss */
 .carousel-menu {
   width: 50.5rem;
   display: inline-block;
   text-align: left;
   margin: 1rem 0 1rem 0; }
 
-/* line 113, ../scss/main.scss */
 .article-cards article {
   display: inline-block;
   max-width: 15.5rem;
@@ -119,17 +100,13 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 1rem;
   text-align: left;
   vertical-align: bottom; }
-/* line 124, ../scss/main.scss */
 .article-cards article.one {
   background: rgba(255, 20, 147, 0.7); }
-/* line 125, ../scss/main.scss */
 .article-cards article.two {
   background: rgba(50, 205, 50, 0.7); }
-/* line 126, ../scss/main.scss */
 .article-cards article.three {
   background: rgba(255, 69, 0, 0.7); }
 
-/* line 130, ../scss/main.scss */
 .navigation.pane {
   padding-bottom: 10px;
   height: 60px;
@@ -138,81 +115,64 @@ h1, h2, h3, h4, h5, h6, p {
   min-height: 60px;
   background-color: white; }
 @media only screen and (min-width: 1024px) {
-  /* line 130, ../scss/main.scss */
   .navigation.pane {
     position: fixed; } }
 @media only screen and (max-width: 320px) {
-  /* line 130, ../scss/main.scss */
   .navigation.pane {
     min-height: 30px; } }
-/* line 143, ../scss/main.scss */
 .navigation.pane .links-and-search {
   display: inline-block; }
-/* line 146, ../scss/main.scss */
 .navigation.pane .links, .navigation.pane .search-bar {
   text-align: right;
   display: block;
   margin-left: 2rem; }
-/* line 151, ../scss/main.scss */
 .navigation.pane .logo, .navigation.pane .menu-bar {
   display: inline-block; }
-/* line 157, ../scss/main.scss */
 .navigation.pane .menu-bar .dropdown li {
   display: block;
   text-align: left; }
 
 /* Adding separators between menu items. */
-/* line 166, ../scss/main.scss */
 .links ul li:last-child a:after, .navigation.pane ul li:last-child h4:after {
   content: ""; }
 
-/* line 170, ../scss/main.scss */
 .links ul li a:after, .navigation.pane ul li h4:after {
   content: " | ";
   color: #DDDDDD; }
 
-/* line 176, ../scss/main.scss */
 .highlights.pane {
   background: url('/img/slide-bg-complexity.jpg?1430561504') 0 0 no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover; }
 @media only screen and (min-width: 1024px) {
-  /* line 176, ../scss/main.scss */
   .highlights.pane {
     padding-top: 90px; } }
-/* line 186, ../scss/main.scss */
 .highlights.pane > div > ul > li:not(:first-child) * {
   display: none; }
-/* line 189, ../scss/main.scss */
 .highlights.pane > div > ul > li section {
   display: inline-block;
   width: 51rem;
   max-width: 100%;
   text-align: left; }
-/* line 195, ../scss/main.scss */
 .highlights.pane > div > ul > li section p {
   max-width: 25.5rem; }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 189, ../scss/main.scss */
   .highlights.pane > div > ul > li section {
     border-radius: 0.5rem;
     background-color: rgba(0, 153, 255, 0.6);
     padding: 1rem; } }
 
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 205, ../scss/main.scss */
   .article-cards article {
     display: block; } }
 
-/* line 211, ../scss/main.scss */
 .solutions.pane {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNjAlIj48c3RvcCBvZmZzZXQ9IjE2LjY2NjY3JSIgc3RvcC1jb2xvcj0iIzkzY2VkZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFlOTBmZiIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -moz-radial-gradient(50% 50% 0, #93cede 10px, #1e90ff 60px);
   background-image: -webkit-radial-gradient(50% 50% 0, #93cede 10px, #1e90ff 60px);
   background-image: radial-gradient(50% 50% 0, #93cede 10px, #1e90ff 60px); }
-/* line 213, ../scss/main.scss */
 .solutions.pane li {
   display: inline-block;
   width: 6.6rem;
@@ -221,17 +181,13 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 1rem;
   vertical-align: bottom; }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 213, ../scss/main.scss */
   .solutions.pane li {
     display: block; } }
-/* line 226, ../scss/main.scss */
 .solutions.pane ul a {
   color: white; }
-/* line 24, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 .solutions.pane ul a:hover {
   color: rgba(0, 61, 102, 0.6); }
 
-/* line 230, ../scss/main.scss */
 .solution-img {
   -moz-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
@@ -242,67 +198,52 @@ h1, h2, h3, h4, h5, h6, p {
   height: 63px;
   padding-top: 63px; }
 
-/* line 238, ../scss/main.scss */
 .solution-img.one {
   background: url('/img/solution_icon_biz-analitics.png?1430561504') 0 0 no-repeat; }
 
-/* line 239, ../scss/main.scss */
 .solution-img.one:hover {
   background: url('/img/solution_icon_biz-analitics_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 240, ../scss/main.scss */
 .solution-img.two {
   background: url('/img/solution_icon_biz-transform.png?1430561504') 0 0 no-repeat; }
 
-/* line 241, ../scss/main.scss */
 .solution-img.two:hover {
   background: url('/img/solution_icon_biz-transform_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 242, ../scss/main.scss */
 .solution-img.three {
   background: url('/img/solution_icon_diti-cx.png?1430561504') 0 0 no-repeat; }
 
-/* line 243, ../scss/main.scss */
 .solution-img.three:hover {
   background: url('/img/solution_icon_diti-cx_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 244, ../scss/main.scss */
 .solution-img.four {
   background: url('/img/solution_icon_optimize-efficnt.png?1430561504') 0 0 no-repeat; }
 
-/* line 245, ../scss/main.scss */
 .solution-img.four:hover {
   background: url('/img/solution_icon_optimize-efficnt_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 246, ../scss/main.scss */
 .solution-img.five {
   background: url('/img/solution_icon_personal.png?1430561504') 0 0 no-repeat; }
 
-/* line 247, ../scss/main.scss */
 .solution-img.five:hover {
   background: url('/img/solution_icon_personal_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 248, ../scss/main.scss */
 .solution-img.six {
   background: url('/img/solution_icon_smart-money.png?1430561504') 0 0 no-repeat; }
 
-/* line 249, ../scss/main.scss */
 .solution-img.six:hover {
   background: url('/img/solution_icon_smart-money_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 251, ../scss/main.scss */
 .news.pane {
   background: url('/img/news-and-events-bg.jpg?1430561504') 0 0 no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   vertical-align: bottom; }
-/* line 258, ../scss/main.scss */
 .news.pane li {
   display: inline-block;
   min-height: 10rem;
   border-radius: 0.16667rem; }
-/* line 264, ../scss/main.scss */
 .news.pane article {
   padding: 1rem;
   max-width: 15.1rem;
@@ -311,17 +252,13 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
   background-color: rgba(255, 255, 255, 0.25); }
-/* line 269, ../scss/main.scss */
 .news.pane article:hover {
   background-color: rgba(255, 255, 255, 0.4); }
-/* line 272, ../scss/main.scss */
 .news.pane article > p {
   padding-left: 0.5rem;
   max-width: 70%; }
-/* line 277, ../scss/main.scss */
 .news.pane p {
   color: black; }
-/* line 280, ../scss/main.scss */
 .news.pane a {
   color: white;
   padding-left: 2rem;
@@ -332,25 +269,19 @@ h1, h2, h3, h4, h5, h6, p {
   -o-transition: all 0.35s ease-in-out;
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out; }
-/* line 24, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 .news.pane a:hover {
   color: #a0a0a0; }
-/* line 287, ../scss/main.scss */
 .news.pane a:hover {
   background-image: url('/img/eventListIconEvents_hover.png?1430561504'); }
 
-/* line 293, ../scss/main.scss */
 .news.pane li:first-child a {
   background-image: url('/img/eventListIconNews.png?1430561504'); }
-/* line 295, ../scss/main.scss */
 .news.pane li:first-child a:hover {
   background-image: url('/img/eventListIconNews_hover.png?1430561504'); }
 
-/* line 300, ../scss/main.scss */
 .news.pane li {
   text-align: left; }
 
-/* line 303, ../scss/main.scss */
 .news.pane header {
   background-color: #0099ff;
   border-radius: 2px;
@@ -358,42 +289,33 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0 0 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 0 20px;
   max-width: 25%; }
-/* line 309, ../scss/main.scss */
 .news.pane header p {
   color: white; }
 
-/* line 313, ../scss/main.scss */
 .day {
   font-size: 3rem;
   text-align: center; }
 
-/* line 317, ../scss/main.scss */
 .month {
   font-size: 1.5rem;
   text-align: center; }
 
-/* line 321, ../scss/main.scss */
 .news.pane article > * {
   display: inline-block; }
 
-/* line 325, ../scss/main.scss */
 .footer.pane > div > ul > li {
   display: inline-block;
   max-width: 15rem;
   text-align: left;
   vertical-align: top; }
-/* line 332, ../scss/main.scss */
 .footer.pane > div > * {
   display: inline-block;
   vertical-align: bottom; }
-/* line 336, ../scss/main.scss */
 .footer.pane a {
   color: white; }
-/* line 24, ../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 .footer.pane a:hover {
   color: #a0a0a0; }
 
-/* line 340, ../scss/main.scss */
 .social {
   height: 16rem;
   padding: 1rem;
@@ -401,26 +323,20 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: rgba(255, 255, 255, 0.1);
   min-width: 17rem;
   display: block; }
-/* line 348, ../scss/main.scss */
 .social article > *, .social .subscribe-box > *, .social .subscribe-box input {
   text-align: left;
   width: 6.8rem;
   display: inline-block; }
-/* line 355, ../scss/main.scss */
 .social h3 {
   color: rgba(102, 194, 255, 0.6); }
-/* line 358, ../scss/main.scss */
 .social ul {
   margin-top: 3rem; }
-/* line 360, ../scss/main.scss */
 .social ul li {
   display: inline-block; }
 
-/* line 365, ../scss/main.scss */
 .subscribe-box * {
   vertical-align: top; }
 
-/* line 368, ../scss/main.scss */
 .social .submit-button {
   background-color: rgba(102, 194, 255, 0.6);
   text-align: center;
@@ -429,7 +345,6 @@ h1, h2, h3, h4, h5, h6, p {
   height: 21px;
   width: auto; }
 
-/* line 377, ../scss/main.scss */
 .social-img {
   -moz-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
@@ -440,67 +355,53 @@ h1, h2, h3, h4, h5, h6, p {
   height: 22px;
   padding-top: 22px; }
 
-/* line 385, ../scss/main.scss */
 .social-img.one {
   background: url('/img/socialMenuIcon-linkdin.png?1430561504') 0 0 no-repeat; }
 
-/* line 386, ../scss/main.scss */
 .social-img.one:hover {
   background: url('/img/socialMenuIcon-linkdin_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 387, ../scss/main.scss */
 .social-img.two {
   background: url('/img/socialMenuIcon-twitter.png?1430561504') 0 0 no-repeat; }
 
-/* line 388, ../scss/main.scss */
 .social-img.two:hover {
   background: url('/img/socialMenuIcon-twitter_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 389, ../scss/main.scss */
 .social-img.three {
   background: url('/img/socialMenuIcon-youtube.png?1430561504') 0 0 no-repeat; }
 
-/* line 390, ../scss/main.scss */
 .social-img.three:hover {
   background: url('/img/socialMenuIcon-youtube_hover.png?1430561504') 0 0 no-repeat; }
 
-/* line 399, ../scss/main.scss */
 .menu-bar li, .links li {
   background-color: white;
   display: inline-block; }
 @media only screen and (max-width: 320px) {
-  /* line 403, ../scss/main.scss */
   .menu-bar ul, .links ul {
     display: none; } }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 403, ../scss/main.scss */
   .menu-bar ul, .links ul {
     display: none; } }
 
 @media only screen and (max-width: 320px) {
-  /* line 413, ../scss/main.scss */
   .menu-bar > ul {
     position: absolute;
     z-index: 100;
     top: 66px;
     right: 0;
     left: 0; }
-  /* line 421, ../scss/main.scss */
   .menu-bar > ul li {
     display: block; } }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 413, ../scss/main.scss */
   .menu-bar > ul {
     position: absolute;
     z-index: 100;
     top: 66px;
     right: 0;
     left: 0; }
-  /* line 432, ../scss/main.scss */
   .menu-bar > ul li {
     display: block; } }
 
-/* line 441, ../scss/main.scss */
 .search-bar input {
   background: url('/img/searchBtn.png?1430561504') 0 0 no-repeat;
   background-color: white;
@@ -509,44 +410,36 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 0.5rem; }
 
 @media only screen and (max-width: 320px) {
-  /* line 448, ../scss/main.scss */
   .search-bar form {
     display: none; } }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 448, ../scss/main.scss */
   .search-bar form {
     display: none; } }
 
 @media only screen and (max-width: 320px) {
-  /* line 458, ../scss/main.scss */
   .hamburger.checkbox:checked ~ .menu-bar * {
     display: block; } }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 458, ../scss/main.scss */
   .hamburger.checkbox:checked ~ .menu-bar * {
     display: block; } }
 
 @media only screen and (max-width: 320px) {
-  /* line 467, ../scss/main.scss */
   .search.checkbox:checked ~ .links-and-search form {
     display: block;
     position: absolute;
     right: 1rem;
     top: 66px; } }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 467, ../scss/main.scss */
   .search.checkbox:checked ~ .links-and-search form {
     display: block;
     position: absolute;
     right: 1rem;
     top: 66px; } }
 
-/* line 483, ../scss/main.scss */
 .search-bar input {
   width: 10rem; }
 
 /* The search menu button. */
-/* line 489, ../scss/main.scss */
 .search.menubar-button {
   float: right;
   background: url('/img/searchBtnMobile.png?1430561504') 0 0 no-repeat;
@@ -556,15 +449,12 @@ h1, h2, h3, h4, h5, h6, p {
   height: 22px;
   margin: 10px 10px 0 0; }
 @media only screen and (min-width: 1024px) {
-  /* line 489, ../scss/main.scss */
   .search.menubar-button {
     display: none; } }
 
-/* line 504, ../scss/main.scss */
 .checkbox {
   display: none; }
 
-/* line 508, ../scss/main.scss */
 .hamburger.menubar-button {
   float: left;
   background: url('/img/hamburger-icon.png?1430561504') 0 0 no-repeat;
@@ -574,34 +464,28 @@ h1, h2, h3, h4, h5, h6, p {
   height: 18px;
   margin: 10px 0 0 10px; }
 @media only screen and (min-width: 1024px) {
-  /* line 508, ../scss/main.scss */
   .hamburger.menubar-button {
     display: none; } }
 
-/* line 523, ../scss/main.scss */
 .menu-bar > * {
   background-color: white; }
 @media only screen and (max-width: 320px) {
-  /* line 523, ../scss/main.scss */
   .menu-bar > * {
     text-align: left;
     position: relative;
     float: left; } }
 @media only screen and (min-width: 321px) and (max-width: 1023px) {
-  /* line 523, ../scss/main.scss */
   .menu-bar > * {
     text-align: left;
     position: relative;
     float: left; } }
 
 /* Testing. Consider deleting this... */
-/* line 539, ../scss/main.scss */
 .logo {
   background: url('/img/comverse-logo.png?1430561504') 0 0 no-repeat;
   width: 185px;
   height: 62px; }
 
-/* line 558, ../scss/main.scss */
 .dropdown {
   transition: all 0.25s ease-in;
   z-index: 50;
@@ -612,86 +496,69 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 2rem;
   background-color: white; }
 
-/* line 570, ../scss/main.scss */
 .menu-bar section:hover .dropdown {
   transition: all 0.25s ease-in-out;
   opacity: 1;
   visibility: visible; }
 
-/* line 576, ../scss/main.scss */
 .menu-bar section:hover {
   transition: all 0.25s ease-in-out; }
 @media only screen and (min-width: 1024px) {
-  /* line 576, ../scss/main.scss */
   .menu-bar section:hover {
     -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 20px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 20px; } }
 
-/* line 583, ../scss/main.scss */
 .menu-bar h4 {
   color: #555; }
 
-/* line 587, ../scss/main.scss */
 .dropdown {
   transition: all 0.25s ease-in-out;
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 10px; }
 
-/* line 593, ../scss/main.scss */
 .outline-only {
   display: none !important; }
 
-/* line 597, ../scss/main.scss */
 .pane .button {
   padding: 8px;
   display: inline-block;
   border-radius: 0.5rem;
   background-color: rgba(0, 153, 255, 0.6); }
-/* line 601, ../scss/main.scss */
 .pane .button a {
   color: white;
   text-decoration: none; }
-/* line 606, ../scss/main.scss */
 .pane .button a:after {
   content: "\25B6";
   /* This is a right triangle character. */
   display: inline-block;
   text-align: right;
   width: 30px; }
-/* line 613, ../scss/main.scss */
 .pane .button:hover {
   background-color: rgba(0, 107, 179, 0.6); }
 
-/* line 618, ../scss/main.scss */
 .stories.pane {
   background-color: #eee; }
-/* line 620, ../scss/main.scss */
 .stories.pane h2 {
   color: rgba(0, 0, 0, 0.8); }
-/* line 623, ../scss/main.scss */
 .stories.pane li {
   color: rgba(0, 0, 0, 0.8);
   display: inline-block;
   max-width: 19.55rem;
   vertical-align: bottom;
   text-align: left; }
-/* line 632, ../scss/main.scss */
 .stories.pane img {
   width: 5rem; }
 
-/* line 637, ../scss/main.scss */
 .front .face, .front h4, .front footer {
   font-size: 0.8rem;
   display: inline-block;
   padding: 0.5rem;
   vertical-align: top; }
 
-/* line 644, ../scss/main.scss */
 .stories.pane h4 {
   text-align: justify; }
-/* line 646, ../scss/main.scss */
 .stories.pane h4:before, .stories.pane h4:after {
   content: " ";
   width: 1.2em;
@@ -703,34 +570,28 @@ h1, h2, h3, h4, h5, h6, p {
   background-repeat: no-repeat;
   margin-right: 1em; }
 
-/* line 658, ../scss/main.scss */
 .stories.pane .firstname {
   color: rgba(0, 153, 255, 0.6);
   text-transform: uppercase; }
 
-/* line 662, ../scss/main.scss */
 .front .face {
   width: 25%; }
 
-/* line 665, ../scss/main.scss */
 .front h4 {
   width: 60%; }
 
-/* line 669, ../scss/main.scss */
 .flip-wrapper {
   width: 19.55rem;
   height: 15rem;
   margin: auto;
   position: relative;
   margin-bottom: 0.5rem; }
-/* line 675, ../scss/main.scss */
 .flip-wrapper:hover .front {
   z-index: 1;
   -moz-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
   -webkit-transform: rotateX(180deg);
   transform: rotateX(180deg); }
-/* line 679, ../scss/main.scss */
 .flip-wrapper:hover .back {
   z-index: 2;
   -moz-transform: rotateX(0deg);
@@ -738,11 +599,9 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg); }
 
-/* line 684, ../scss/main.scss */
 .last .flip-wrapper {
   width: 100%; }
 
-/* line 688, ../scss/main.scss */
 .front, .back {
   width: 100%;
   height: 100%;
@@ -757,12 +616,10 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
-/* line 697, ../scss/main.scss */
 .front {
   z-index: 2;
   background-color: white; }
 
-/* line 701, ../scss/main.scss */
 .back {
   z-index: 1;
   background-color: white;
@@ -771,7 +628,6 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-transform: rotateX(-180deg);
   transform: rotateX(-180deg); }
 
-/* line 706, ../scss/main.scss */
 .company {
   margin-bottom: 0.5rem;
   display: inline-block;
@@ -779,10 +635,8 @@ h1, h2, h3, h4, h5, h6, p {
   width: 6.25rem;
   height: auto;
   text-align: center; }
-/* line 716, ../scss/main.scss */
 .company:hover {
   background: url('/img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg?1430561504');
   background-position: center; }
-/* line 719, ../scss/main.scss */
 .company:hover img {
   visibility: hidden; }
