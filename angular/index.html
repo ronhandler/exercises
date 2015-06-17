@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friends App</title>
+</head>
+<body ng-app="friendsApp">
+    <div ng-controller="FriendsController">
+		<div style="background-color: {{color}};">
+			{{color}}
+		</div>
+        I have {{friends.length}} friends.
+        <ul>
+            <li ng-repeat="friend in friends | filter:{name:'a', age:0}">
+                [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+                <button ng-click="sayMyFavoriteColor(friend)">Favorite Color</button>
+            </li>
+        </ul>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script>
+    var app = angular.module('friendsApp', []);
+
+    app.controller('FriendsController', ['$scope', function($scope) {
+
+		$scope.sayMyFavoriteColor = function(friend) {
+			$scope.color = friend.color;
+		}
+        $scope.friends = [{
+            name: 'John',
+            age: 25,
+            color: "Red"
+        }, {
+            name: 'Jessie',
+            age: 30,
+            color: "Red"
+        }, {
+            name: 'Johanna',
+            age: 28,
+            color: "Red"
+        }, {
+            name: 'Joy',
+            age: 15,
+            color: "Red"
+        }, {
+            name: 'Mary',
+            age: 28,
+            color: "Red"
+        }, {
+            name: 'Peter',
+            age: 95,
+            color: "Red"
+        }, {
+            name: 'Sebastian',
+            age: 50,
+            color: "White"
+        }, {
+            name: 'Erika',
+            age: 27,
+            color: "Red"
+        }, {
+            name: 'Patrick',
+            age: 40,
+            color: "Red"
+        }, {
+            name: 'Samantha',
+            age: 60,
+            color: "Red"
+        }]
+    }]);
+    </script>
+	<script src="//localhost:35730/livereload.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+$break-small: 320px;
+$break-large: 1024px;
+
+// This bit sets media query mixins.
+@mixin respond-to($media) {
+	@if $media == handhelds {
+		@media only screen and (max-width: $break-small) { @content; }
+	}
+	@else if $media == mediumscreens {
+		@media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+	}
+	@else if $media == widescreens {
+		@media only screen and (min-width: $break-large) { @content; }
+	}
+}
+
+@mixin handhelds { @include respond-to(handhelds) { @content; } }
+@mixin tablets { @include respond-to(mediumscreens) { @content; } }
+@mixin widescreens { @include respond-to(widescreens) { @content; } }
+
+@mixin debug { background: rgba(red, 0.3); }
+
